@@ -3,6 +3,8 @@ import "./App.css";
 import Home from "./pages/home/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/layouts/Header";
+import VerticalMenu from "./components/layouts/VerticalMenu";
+import Page from "./components/Page";
 
 function App() {
   const [data, setData] = useState([]);
@@ -23,12 +25,14 @@ function App() {
   if (data.length === 0) {
     return;
   }
-  console.log(data.data.keyData.calorieCount);
+  console.log(data.data);
 
   return (
     <Router>
-      <div className="app">
+      <div className="App">
         <Header />
+        <VerticalMenu />
+        <Page>coucou</Page>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

@@ -1,0 +1,7 @@
+.VerticalMenu {
+  position: absolute;
+  left: 0;
+  height: 92vh;
+  width: 80px;
+  background-color: rgb(28, 25, 25);
+}
