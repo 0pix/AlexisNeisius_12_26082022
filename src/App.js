@@ -32,9 +32,8 @@ function App() {
       <div className="App">
         <Header />
         <VerticalMenu />
-        <Page>coucou</Page>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Page>{<Home />}</Page>} />
         </Routes>
       </div>
     </Router>

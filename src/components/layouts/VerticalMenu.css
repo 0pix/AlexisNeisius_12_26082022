@@ -1,7 +1,27 @@
 .VerticalMenu {
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   position: absolute;
   left: 0;
   height: 92vh;
   width: 80px;
-  background-color: rgb(28, 25, 25);
+  background-color: #020203;
+  color: white;
+}
+.icons {
+}
+
+.VerticalMenuNav {
+  width: fit-content;
+  height: 50%;
+}
+
+.VerticalMenuText {
+  margin-bottom: 50%;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  /*text-orientation: upright;*/
 }
