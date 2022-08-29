@@ -33,7 +33,7 @@ function App() {
         <Header />
         <VerticalMenu />
         <Routes>
-          <Route path="/" element={<Page>{<Home />}</Page>} />
+          <Route path="/" element={<Page>{<Home data={data.data} />}</Page>} />
         </Routes>
       </div>
     </Router>

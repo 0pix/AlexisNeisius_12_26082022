@@ -1,7 +1,6 @@
 .Page {
   min-height: 92vh;
-  padding-left: 80px;
-  /*padding-top: 8vh;*/
-  width: 100%;
-  background-color: crimson;
+  margin-left: 80px;
+  /*background-color: #78ce29;*/
+  padding: 5% 10%;
 }
