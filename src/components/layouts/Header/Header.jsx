@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import logo from "../../assets/logo.svg";
+import logo from "../../../assets/logo.svg";
 
 const Header = () => {
   return (
@@ -9,16 +9,16 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <a href="#">Accueil</a>
+            <a href="src/components/layouts/Header/Header#">Accueil</a>
           </li>
           <li>
-            <a href="#">Profil</a>
+            <a href="src/components/layouts/Header/Header#">Profil</a>
           </li>
           <li>
-            <a href="#">Réglage</a>
+            <a href="src/components/layouts/Header/Header#">Réglage</a>
           </li>
           <li>
-            <a href="#">Communauté</a>
+            <a href="src/components/layouts/Header/Header#">Communauté</a>
           </li>
         </ul>
       </nav>

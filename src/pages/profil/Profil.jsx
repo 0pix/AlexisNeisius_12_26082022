@@ -1,17 +1,17 @@
 import React from "react";
 import "./Home.css";
-import StatFood from "../../components/home/StatFood";
+import StatFood from "./StatFood/StatFood";
 import fire from "../../assets/StatFoodIcons/fire.svg";
 import chicken from "../../assets/StatFoodIcons/chicken.svg";
 import apple from "../../assets/StatFoodIcons/apple.svg";
 import burger from "../../assets/StatFoodIcons/burger.svg";
 
-const Home = ({ data }) => {
+const Profil = ({ data }) => {
   console.log(data);
 
   /*  if (data === undefined) {
-    return;
-  }*/
+		return;
+	}*/
 
   return (
     <div className={"Home"}>
@@ -60,4 +60,4 @@ const Home = ({ data }) => {
   );
 };
 
-export default Home;
+export default Profil;

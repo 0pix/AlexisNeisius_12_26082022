@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Home from "./pages/home/Home";
+import Profil from "./pages/profil/Profil";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/layouts/Header";
-import VerticalMenu from "./components/layouts/VerticalMenu";
-import Page from "./components/Page";
+import Header from "./components/layouts/Header/Header";
+import VerticalMenu from "./components/layouts/VerticalMenu/VerticalMenu";
+import Page from "./components/pageStyle/Page";
 
 function App() {
   const [data, setData] = useState([]);
@@ -33,7 +33,10 @@ function App() {
         <Header />
         <VerticalMenu />
         <Routes>
-          <Route path="/" element={<Page>{<Home data={data.data} />}</Page>} />
+          <Route
+            path="/user/:id"
+            element={<Page>{<Profil data={data.data} />}</Page>}
+          />
         </Routes>
       </div>
     </Router>
