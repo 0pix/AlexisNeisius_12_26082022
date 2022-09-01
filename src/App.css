@@ -1,4 +1,11 @@
 .App {
-  position: relative;
-  min-height: 100vh;
+  position: absolute;
+  background-color: #ff0101;
+  width: calc(100% - 80px);
+  height: calc(100vh - 80px);
+  bottom: 0;
+  right: 0;
+  z-index: 0.1;
+  /*margin: 80px 0 0 80px;*/
+  /*padding: 0 0 0 80px;*/
 }

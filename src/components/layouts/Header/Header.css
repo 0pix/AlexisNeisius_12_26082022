@@ -1,11 +1,16 @@
 .Header {
-  height: 8vh;
+  position: absolute;
+  z-index: 3;
+
+  width: 100%;
+  height: 80px;
   justify-content: space-between;
   display: flex;
   align-items: center;
-  background-color: #020203;
+  background-color: var(--main-bg-color);
   color: white;
   padding: 15px;
+  top: 0;
 }
 
 .Header ul {

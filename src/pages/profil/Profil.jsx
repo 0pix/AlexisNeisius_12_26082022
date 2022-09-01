@@ -1,10 +1,11 @@
 import React from "react";
-import "./Home.css";
+import "./Profil.css";
 import StatFood from "./StatFood/StatFood";
 import fire from "../../assets/StatFoodIcons/fire.svg";
 import chicken from "../../assets/StatFoodIcons/chicken.svg";
 import apple from "../../assets/StatFoodIcons/apple.svg";
 import burger from "../../assets/StatFoodIcons/burger.svg";
+import Time from "./Time/Time";
 
 const Profil = ({ data }) => {
   console.log(data);
@@ -52,7 +53,7 @@ const Profil = ({ data }) => {
             bgColor={"rgba(251,80,128,0.09)"}
           />
         </div>
-        <div className={"div3"}>test</div>
+        <div className={"div3"}>{/*<Time />*/}</div>
         <div className={"div4"}>test</div>
         <div className={"div5"}>test</div>
       </div>
