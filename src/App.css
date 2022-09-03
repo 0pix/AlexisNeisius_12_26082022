@@ -1,6 +1,6 @@
 .App {
   position: absolute;
-  background-color: #ff0101;
+  /*background-color: #ff0101;*/
   width: calc(100% - 80px);
   height: calc(100vh - 80px);
   bottom: 0;

@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  background-color: aqua;
+  /*background-color: aqua;*/
   padding: 70px 70px;
 }
 
@@ -47,6 +47,7 @@
 .div3,
 .div4,
 .div5 {
+  min-width: 160px;
 }
 .div1 {
   grid-area: 1 / 1 / 6 / 4;
@@ -72,5 +73,5 @@
 }
 .div5 {
   grid-area: 6 / 3 / 9 / 4;
-  background-color: blue;
+  /*background-color: blue;*/
 }

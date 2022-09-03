@@ -1,0 +1,24 @@
+.PieChart {
+  position: relative;
+}
+
+.PieChart-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.PieChart-text span:first-of-type {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.test-radius {
+  border-radius: 100%;
+}
