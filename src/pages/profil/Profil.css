@@ -69,7 +69,7 @@
 }
 .div4 {
   grid-area: 6 / 2 / 9 / 3;
-  background-color: blue;
+  background-color: #282d30;
 }
 .div5 {
   grid-area: 6 / 3 / 9 / 4;

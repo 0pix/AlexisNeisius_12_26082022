@@ -27,7 +27,7 @@ function Score() {
             // cy={200}
             startAngle={90}
             endAngle={-270}
-            innerRadius={65}
+            innerRadius={67}
             outerRadius={80}
             // fill="#8884d8"
             paddingAngle={0}

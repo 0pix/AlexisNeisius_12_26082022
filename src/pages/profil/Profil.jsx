@@ -7,7 +7,8 @@ import chicken from "../../assets/StatFoodIcons/chicken.svg";
 import apple from "../../assets/StatFoodIcons/apple.svg";
 import burger from "../../assets/StatFoodIcons/burger.svg";
 import Score from "./Score/Score";
-// import Time from "./Time/Time";
+import RadarGraph from "./RadarGraph/RadarGraph";
+import Weight from "./Weight/Weight";
 
 const Profil = () => {
   const [data, setData] = useState([]);
@@ -26,7 +27,7 @@ const Profil = () => {
       .catch(function (err) {
         console.log(err, " error");
       });
-  }, [setData]);
+  }, [idUrl.id, setData]);
 
   if (data.data === undefined || data.data === null) {
     return;
@@ -44,7 +45,9 @@ const Profil = () => {
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
       <div className={"Home-content"}>
-        <div className={"div1"}>test1</div>
+        <div className={"div1"}>
+          <Weight />
+        </div>
         <div className={"div2"}>
           <StatFood
             data={data.data.keyData.calorieCount}
@@ -72,7 +75,9 @@ const Profil = () => {
           />
         </div>
         <div className={"div3"}>{/*<Time />*/}</div>
-        <div className={"div4"}>test</div>
+        <div className={"div4"}>
+          <RadarGraph id={idUrl.id} />
+        </div>
         <div className={"div5"}>
           <Score />
         </div>
