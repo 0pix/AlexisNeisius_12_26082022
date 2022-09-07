@@ -1,0 +1,10 @@
+.CartesianGrid {
+  opacity: 0.7;
+  color: red;
+  background-color: chartreuse;
+  fill: crimson;
+}
+
+.Tooltip {
+  background-color: chartreuse;
+}

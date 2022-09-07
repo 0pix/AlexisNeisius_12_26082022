@@ -51,7 +51,7 @@
 }
 .div1 {
   grid-area: 1 / 1 / 6 / 4;
-  background-color: blue;
+  /*background-color: blue;*/
 }
 
 .div2 {
@@ -65,7 +65,7 @@
 }
 .div3 {
   grid-area: 6 / 1 / 9 / 2;
-  background-color: blue;
+  background-color: #ff0000;
 }
 .div4 {
   grid-area: 6 / 2 / 9 / 3;

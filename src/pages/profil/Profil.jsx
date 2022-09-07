@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
-import "./Profil.css";
-import { useParams } from "react-router-dom";
-import StatFood from "./StatFood/StatFood";
-import fire from "../../assets/StatFoodIcons/fire.svg";
-import chicken from "../../assets/StatFoodIcons/chicken.svg";
-import apple from "../../assets/StatFoodIcons/apple.svg";
-import burger from "../../assets/StatFoodIcons/burger.svg";
-import Score from "./Score/Score";
-import RadarGraph from "./RadarGraph/RadarGraph";
-import Weight from "./Weight/Weight";
+import React, { useEffect, useState } from 'react';
+import './Profil.css';
+import { useParams } from 'react-router-dom';
+import StatFood from './StatFood/StatFood';
+import fire from '../../assets/StatFoodIcons/fire.svg';
+import chicken from '../../assets/StatFoodIcons/chicken.svg';
+import apple from '../../assets/StatFoodIcons/apple.svg';
+import burger from '../../assets/StatFoodIcons/burger.svg';
+import Score from './Score/Score';
+import RadarGraph from './RadarGraph/RadarGraph';
+import Weight from './Weight/Weight';
+import Time from './Time/Time';
 
 const Profil = () => {
   const [data, setData] = useState([]);
@@ -25,7 +26,7 @@ const Profil = () => {
         setData(data);
       })
       .catch(function (err) {
-        console.log(err, " error");
+        console.log(err, ' error');
       });
   }, [idUrl.id, setData]);
 
@@ -34,51 +35,51 @@ const Profil = () => {
   }
 
   return (
-    <div className={"Home"}>
-      <div className={"Home-header"}>
+    <div className={'Home'}>
+      <div className={'Home-header'}>
         <h1>
           Bonjour
-          <span className={"Home-firstName"}>
-            {" " + data.data.userInfos.firstName}
-          </span>
+          <span className={'Home-firstName'}>{' ' + data.data.userInfos.firstName}</span>
         </h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
-      <div className={"Home-content"}>
-        <div className={"div1"}>
-          <Weight />
+      <div className={'Home-content'}>
+        <div className={'div1'}>
+          <Weight id={idUrl.id} />
         </div>
-        <div className={"div2"}>
+        <div className={'div2'}>
           <StatFood
             data={data.data.keyData.calorieCount}
             img={fire}
-            category={"Calories"}
-            bgColor={"rgba(255,0,0,0.09)"}
+            category={'Calories'}
+            bgColor={'rgba(255,0,0,0.09)'}
           />
           <StatFood
             data={data.data.keyData.proteinCount}
             img={chicken}
-            category={"Proteines"}
-            bgColor={"rgba(73,183,253,0.09)"}
+            category={'Proteines'}
+            bgColor={'rgba(73,183,253,0.09)'}
           />
           <StatFood
             data={data.data.keyData.carbohydrateCount}
             img={apple}
-            category={"Glucides"}
-            bgColor={"rgba(255,209,0,0.15)"}
+            category={'Glucides'}
+            bgColor={'rgba(255,209,0,0.15)'}
           />
           <StatFood
             data={data.data.keyData.lipidCount}
             img={burger}
-            category={"Lipides"}
-            bgColor={"rgba(253,81,129,0.15)"}
+            category={'Lipides'}
+            bgColor={'rgba(253,81,129,0.15)'}
           />
         </div>
-        <div className={"div3"}>{/*<Time />*/}</div>
-        <div className={"div4"}>
+        <div className={'div3'}>
+          <Time id={idUrl.id} />
+        </div>
+        <div className={'div4'}>
           <RadarGraph id={idUrl.id} />
         </div>
-        <div className={"div5"}>
+        <div className={'div5'}>
           <Score />
         </div>
       </div>
