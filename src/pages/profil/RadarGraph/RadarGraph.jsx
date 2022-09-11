@@ -67,12 +67,28 @@ function RadarGraph({ id }) {
     data.data.data[x].kind = data.data.kind[x + 1];
   }
 
-  // console.log(data.data);
+  data.data.data.map((elt, index) => {
+    console.log(elt.kind);
+
+    if (elt.kind === 'cardio') {
+      index = index + 1;
+    } else {
+      console.log('non');
+    }
+
+    return elt;
+
+    // elt.kind === 'cardio' ? elt.index === 6 : null;
+    // return elt;
+  });
+
+  console.log(data.data.data);
 
   return (
     <ResponsiveContainer className={'RadarGraph'} width="100%" height="100%">
       <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data.data.data}>
-        <PolarGrid />
+        {/*radialLines introuvable sur la doc de recharts*/}
+        <PolarGrid radialLines={false} />
         <PolarAngleAxis className={'RadarGraph'} dataKey="kind" />
         <Radar name="Mike" dataKey="value" fill="#FF0000" fillOpacity={0.6} />
       </RadarChart>

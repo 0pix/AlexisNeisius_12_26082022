@@ -8,9 +8,12 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Label
 } from 'recharts';
-import './Weight.css';
+import './BarGraph.css';
+import * as PropTypes from 'prop-types';
+import { CustomTooltipBar } from './CustomTooltipBar';
 
 const data1 = [
   {
@@ -75,7 +78,9 @@ const data1 = [
   }
 ];
 
-function Weight({ id }) {
+function BarGraph({ id }) {
+  const [coordinate, setCoordinate] = useState(0);
+
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:3000/user/${id}/activity`)
@@ -105,11 +110,11 @@ function Weight({ id }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart width={500} height={300} data={data.data.sessions}>
-        {/*<Legend />*/}
+        <Legend iconSize={10} iconType={'circle'} position="insideBottom" verticalAlign="top" />
         <CartesianGrid className={'CartesianGrid'} strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis orientation={'right'} />
-        <Tooltip className={Tooltip} />
+        <XAxis dataKey="day" tickLine={false} />
+        <YAxis orientation={'right'} axisLine={false} tickLine={false} />
+        <Tooltip className={Tooltip} content={<CustomTooltipBar setCoordinate={setCoordinate} />} />
         <Bar dataKey="kilogram" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#282D30" />
         <Bar dataKey="calories" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#E60000" />
       </BarChart>
@@ -117,4 +122,4 @@ function Weight({ id }) {
   );
 }
 
-export default Weight;
+export default BarGraph;

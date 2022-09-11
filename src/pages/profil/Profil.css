@@ -9,22 +9,11 @@
   padding: 70px 70px;
 }
 
-/*.Page {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  height: 92vh;*/
-/*  margin-left: 80px;*/
-/*  background-color: #333333;*/
-/*  padding: 70px 70px;*/
-/*}*/
-
 .Home h1 {
   font-size: 2.5em;
 }
 
 .Home-header {
-  /*background-color: blueviolet;*/
   width: 100%;
 }
 
@@ -36,17 +25,26 @@
   width: 100%;
   margin-top: 5%;
   display: grid;
-  height: 70vh;
-  /*background-color: aqua;*/
+  height: 500px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 15px;
+  background-color: chartreuse;
 }
+
+/*.div1,*/
+/*.div2,*/
+/*.div3,*/
+/*.div4,*/
+/*.div5 {*/
+/*  */
+/*}*/
 
 .div3,
 .div4,
 .div5 {
+  height: 240px;
   min-width: 160px;
 }
 .div1 {

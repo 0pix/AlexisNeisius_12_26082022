@@ -8,8 +8,8 @@ import apple from '../../assets/StatFoodIcons/apple.svg';
 import burger from '../../assets/StatFoodIcons/burger.svg';
 import Score from './Score/Score';
 import RadarGraph from './RadarGraph/RadarGraph';
-import Weight from './Weight/Weight';
-import Time from './Time/Time';
+import BarGraph from './BarGraph/BarGraph';
+import Curve from './Curve/Curve';
 
 const Profil = () => {
   const [data, setData] = useState([]);
@@ -45,7 +45,7 @@ const Profil = () => {
       </div>
       <div className={'Home-content'}>
         <div className={'div1'}>
-          <Weight id={idUrl.id} />
+          <BarGraph id={idUrl.id} />
         </div>
         <div className={'div2'}>
           <StatFood
@@ -74,7 +74,7 @@ const Profil = () => {
           />
         </div>
         <div className={'div3'}>
-          <Time id={idUrl.id} />
+          <Curve id={idUrl.id} />
         </div>
         <div className={'div4'}>
           <RadarGraph id={idUrl.id} />
