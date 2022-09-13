@@ -1,10 +1,5 @@
 .CustomTooltipBar {
-  background-color: #ff0101;
-  padding: 10px 0;
   color: white;
-}
-
-.CustomTooltipBar p {
-  text-align: center;
-  padding: 7px 8px;
+  outline: none;
+  background-color: #ff0101;
 }

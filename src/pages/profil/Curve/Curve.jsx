@@ -105,7 +105,11 @@ function Curve({ id }) {
         <h2 className={'Curve-title'}>Durée moyenne des sessions</h2>
       </div>
 
-      <ResponsiveContainer className={'Curve'} width="100%" height="100%">
+      <ResponsiveContainer
+        style={{ backgroundss: 'green' }}
+        className={'Curve'}
+        width="100%"
+        height="100%">
         <LineChart
           width={500}
           height={300}
@@ -136,6 +140,7 @@ function Curve({ id }) {
             cursor={<CustomTooltipCursor coordinate={coordinate} />}
           />
           <XAxis
+            style={{ position: 'absolute' }}
             tick={{ fontSize: 12, fontWeight: 500 }}
             height={30}
             padding={{ left: 20, right: 20 }}

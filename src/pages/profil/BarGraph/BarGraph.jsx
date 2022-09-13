@@ -108,17 +108,33 @@ function BarGraph({ id }) {
   // console.log(data.data.sessions);
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <BarChart width={500} height={300} data={data.data.sessions}>
-        <Legend iconSize={10} iconType={'circle'} position="insideBottom" verticalAlign="top" />
-        <CartesianGrid className={'CartesianGrid'} strokeDasharray="3 3" />
-        <XAxis dataKey="day" tickLine={false} />
-        <YAxis orientation={'right'} axisLine={false} tickLine={false} />
-        <Tooltip className={Tooltip} content={<CustomTooltipBar setCoordinate={setCoordinate} />} />
-        <Bar dataKey="kilogram" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#282D30" />
-        <Bar dataKey="calories" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#E60000" />
-      </BarChart>
-    </ResponsiveContainer>
+    <div className={'BarGraph'}>
+      <div className={'BarGraph-legend'}>
+        <h2>Activité quotidienne</h2>
+        <ul>
+          <li>
+            <div className={'BarGraph-blackDot'}></div>Poids (kg)
+          </li>
+          <li>
+            <div className={'BarGraph-redDot'}></div>Calories brûlées (kCal)
+          </li>
+        </ul>
+      </div>
+      <ResponsiveContainer height={250} className={'BarGraph-container'}>
+        <BarChart data={data.data.sessions}>
+          {/*<Legend iconSize={10} iconType={'circle'} position="insideBottom" verticalAlign="top" />*/}
+          <CartesianGrid className={'CartesianGrid'} opacity={0.3} strokeDasharray="3 3" />
+          <XAxis dataKey="day" tickLine={false} />
+          <YAxis orientation={'right'} axisLine={false} tickLine={false} />
+          <Tooltip
+            className={Tooltip}
+            content={<CustomTooltipBar setCoordinate={setCoordinate} />}
+          />
+          <Bar dataKey="kilogram" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#282D30" />
+          <Bar dataKey="calories" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#E60000" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 
