@@ -1,78 +1,18 @@
-import React, { PureComponent, useEffect, useState } from 'react';
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Rectangle,
-  PieChart,
-  Pie,
-  Cell
-} from 'recharts';
-
-import './Curve.css';
+import React, { useEffect, useState } from 'react';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import './CurveGraph.css';
 import { CustomTooltipCursor } from './CustomCursor';
 import { CustomTooltip } from './CustomTooltip';
 
-const data1 = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100
-  }
-];
+/**
+ * Component that build the user's Board average-sessions (the curve)
+ * @param { number } idUrl.id
+ * @return { CurveGraph }
+ */
 
-function Curve({ id }) {
+function CurveGraph({ id }) {
   const [data, setData] = useState([]);
   const [coordinate, setCoordinate] = useState(0);
-  const TitleCurve = () => {
-    return (
-      <div>
-        <p style={{ backgroundColor: '#ffffff', padding: '2px 5px' }}>coucou</p>
-      </div>
-    );
-  };
 
   useEffect(() => {
     fetch(`http://localhost:3000/user/${id}/average-sessions`)
@@ -94,29 +34,27 @@ function Curve({ id }) {
 
   const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
-  data.data.sessions.map((elt, index) => {
-    elt.day = days[index];
-    return elt;
-  });
+  const dayToIndex = (tabler) => {
+    tabler.map((elt, index) => {
+      elt.day = index;
+      return elt;
+    });
+  };
+  dayToIndex(data.data.sessions);
 
   return (
-    <div className={'Curve'} style={{ width: '100%', height: '100%' }}>
+    <div className={'CurveGraph'} style={{ width: '100%', height: '100%' }}>
       <div>
-        <h2 className={'Curve-title'}>Durée moyenne des sessions</h2>
+        <h2 className={'CurveGraph-title'}>Durée moyenne des sessions</h2>
       </div>
-
-      <ResponsiveContainer
-        style={{ backgroundss: 'green' }}
-        className={'Curve'}
-        width="100%"
-        height="100%">
+      <ResponsiveContainer className={'CurveGraph'} width="100%" height="100%">
         <LineChart
           width={500}
           height={300}
           margin={{ top: 80, right: 5, bottom: 5, left: 5 }}
           data={data.data.sessions}>
+          {/** gradient for the svg curve */}
           <defs>
-            {/** https://github.com/recharts/recharts/issues/407 */}
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="rgba(255, 255, 255, 0.33)" />
               <stop offset="50%" stopColor="rgba(255, 255, 255, 0.66)" />
@@ -154,4 +92,4 @@ function Curve({ id }) {
   );
 }
 
-export default Curve;
+export default CurveGraph;
