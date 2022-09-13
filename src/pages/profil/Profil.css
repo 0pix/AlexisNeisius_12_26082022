@@ -21,6 +21,8 @@
   color: #ff0101;
 }
 
+/*grid*/
+
 .Home-content {
   width: 100%;
   margin-top: 5%;
@@ -30,7 +32,6 @@
   grid-template-rows: repeat(8, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  /*background-color: chartreuse;*/
 }
 
 .div3,
@@ -42,7 +43,6 @@
 .div1 {
   overflow: hidden;
   grid-area: 1 / 1 / 6 / 4;
-  /*background-color: blue;*/
 }
 
 .div2 {
@@ -50,10 +50,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /*height: 470px;*/
   grid-area: 1 / 4 / 9 / 5;
-  /*background-color: blue;*/
 }
+
 .div3 {
   grid-area: 6 / 1 / 9 / 2;
   background-color: #ff0000;
@@ -64,5 +63,4 @@
 }
 .div5 {
   grid-area: 6 / 3 / 9 / 4;
-  /*background-color: blue;*/
 }

@@ -1,4 +1,5 @@
 import './CustomizedLegendBar.css';
+
 export const CustomizedLegendBar = (props) => {
   return (
     <div className="legend">

@@ -1,12 +1,6 @@
 import React from 'react';
 import './CustomTooltipBar.css';
 
-/**
- * Component that build the tooltip for BarGraph
- * @param { number } idUrl.id
- * @return { BarGraph }
- */
-
 export const CustomTooltipBar = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (

@@ -14,9 +14,19 @@ import { CustomTooltipBar } from './CustomTooltipBar';
 import { CustomizedLegendBar } from './CustomizedLegendBar';
 
 /**
- * Component that build the user's Board activites
- * @param { number } idUrl.id
- * @return { BarGraph }
+ * Component build the user's Board activites
+ // * @param { number } idUrl.id
+ // * @return { BarGraph }
+ */
+
+/**
+ * Component which builds the user's Board score of the activity
+ *
+ * @param id number as id from current user
+ *
+ * @return BarGraph
+ * @author Alexis.N
+ * @version 1.0
  */
 
 function BarGraph({ id }) {

@@ -9,7 +9,7 @@
   left: 0;
   height: calc(100vh - 80px);
   width: 80px;
-  background-color: var(--main-bg-color);
+  background-color: var(--main-color);
   color: white;
   bottom: 0;
 }

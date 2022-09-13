@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import fire from '../../assets/StatFoodIcons/fire.svg';
-import chicken from '../../assets/StatFoodIcons/chicken.svg';
-import apple from '../../assets/StatFoodIcons/apple.svg';
-import burger from '../../assets/StatFoodIcons/burger.svg';
-import StatFood from './StatFood/StatFood';
+import fire from '../../assets/FoodGraphIcons/fire.svg';
+import chicken from '../../assets/FoodGraphIcons/chicken.svg';
+import apple from '../../assets/FoodGraphIcons/apple.svg';
+import burger from '../../assets/FoodGraphIcons/burger.svg';
+import { FoodGraph } from './FoodGraph/FoodGraph';
 import ScoreShart from './ScoreGraph/ScoreShart';
 import RadarGraph from './RadarGraph/RadarGraph';
 import BarGraph from './BarGraph/BarGraph';
@@ -50,28 +50,28 @@ const Profil = () => {
         </div>
 
         <div className={'div2'}>
-          <StatFood
+          <FoodGraph
             data={data.data.keyData.calorieCount}
             img={fire}
             category={'Calories'}
             bgColor={'rgba(255,0,0,0.09)'}
           />
 
-          <StatFood
+          <FoodGraph
             data={data.data.keyData.proteinCount}
             img={chicken}
             category={'Proteines'}
             bgColor={'rgba(73,183,253,0.09)'}
           />
 
-          <StatFood
+          <FoodGraph
             data={data.data.keyData.carbohydrateCount}
             img={apple}
             category={'Glucides'}
             bgColor={'rgba(255,209,0,0.15)'}
           />
 
-          <StatFood
+          <FoodGraph
             data={data.data.keyData.lipidCount}
             img={burger}
             category={'Lipides'}

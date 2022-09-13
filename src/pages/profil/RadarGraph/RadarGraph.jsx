@@ -8,6 +8,16 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
  * @return { RadarGraph }
  */
 
+/**
+ * Component  builds the user's Board performance (radar)
+ *
+ * @param id number as id from current user
+ *
+ * @return CurveGraph
+ * @author Alexis.N
+ * @version 1.0
+ */
+
 function RadarGraph({ id }) {
   const [data, setData] = useState([]);
   useEffect(() => {

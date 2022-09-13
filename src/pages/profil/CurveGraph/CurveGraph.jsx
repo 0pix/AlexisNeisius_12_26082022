@@ -5,9 +5,13 @@ import { CustomTooltipCursor } from './CustomCursor';
 import { CustomTooltip } from './CustomTooltip';
 
 /**
- * Component that build the user's Board average-sessions (the curve)
- * @param { number } idUrl.id
- * @return { CurveGraph }
+ * Component  builds the user's Board average-sessions (the curve)
+ *
+ * @param id number as id from current user
+ *
+ * @return CurveGraph
+ * @author Alexis.N
+ * @version 1.0
  */
 
 function CurveGraph({ id }) {
@@ -32,11 +36,10 @@ function CurveGraph({ id }) {
     return;
   }
 
-  const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-
   const dayToIndex = (tabler) => {
+    const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
     tabler.map((elt, index) => {
-      elt.day = index;
+      elt.day = days[index];
       return elt;
     });
   };

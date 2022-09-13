@@ -8,6 +8,16 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
  * @return { ScoreShart }
  */
 
+/**
+ * Component  builds the user's Board objectif
+ *
+ * @param value number as value as the percentage of the objectif
+ *
+ * @return ScoreShart
+ * @author Alexis.N
+ * @version 1.0
+ */
+
 function ScoreShart({ value }) {
   const COLORS = ['#e0e0e0', '#ff0000'];
   const baseValue = 100 - value;

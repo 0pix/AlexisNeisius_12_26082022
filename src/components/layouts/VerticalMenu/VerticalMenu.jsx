@@ -1,10 +1,10 @@
 import React from 'react';
 import './VerticalMenu.css';
-import Icon from '../../../assets/iconsBarGraph/Icon';
-import zen from '../../../assets/zen.svg';
-import swimmer from '../../../assets/swimmer.svg';
-import bike from '../../../assets/bike.svg';
-import weight from '../../../assets/weight.svg';
+import Icon from './IconMenu';
+import zen from '../../../assets/VerticalMenuIcons/zen.svg';
+import swimmer from '../../../assets/VerticalMenuIcons/swimmer.svg';
+import bike from '../../../assets/VerticalMenuIcons/bike.svg';
+import weight from '../../../assets/VerticalMenuIcons/weight.svg';
 
 const VerticalMenu = () => {
   return (
