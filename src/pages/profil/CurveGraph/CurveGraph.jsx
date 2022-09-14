@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, YAxis } from 'recharts';
 import './CurveGraph.css';
 import { CustomTooltipCursor } from './CustomCursor';
 import { CustomTooltip } from './CustomTooltip';
@@ -80,6 +80,7 @@ function CurveGraph({ id }) {
             content={<CustomTooltip setCoordinate={setCoordinate} />}
             cursor={<CustomTooltipCursor coordinate={coordinate} />}
           />
+          <YAxis hide={true} domain={['dataMin - 10', 'dataMax']}></YAxis>
           <XAxis
             style={{ position: 'absolute' }}
             tick={{ fontSize: 12, fontWeight: 500 }}

@@ -3,3 +3,17 @@
   outline: none;
   background-color: #ff0101;
 }
+
+.CustomTooltipBar:active {
+  outline: none;
+}
+.CustomTooltipBar:focus {
+  outline: none;
+}
+.CustomTooltipBar:focus-visible {
+  outline: none;
+}
+
+.CustomTooltipBar:current {
+  outline: none;
+}

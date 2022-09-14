@@ -1,11 +1,11 @@
 import React from 'react';
-import './ScoreShart.css';
+import './ScoreGraph.css';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 /**
  * Component that build the user's Board score of objectif
  * @param { number } 50
- * @return { ScoreShart }
+ * @return { ScoreGraph }
  */
 
 /**
@@ -13,24 +13,25 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
  *
  * @param value number as value as the percentage of the objectif
  *
- * @return ScoreShart
+ * @return ScoreGraph
  * @author Alexis.N
  * @version 1.0
  */
 
-function ScoreShart({ value }) {
+function ScoreGraph({ value }) {
   const COLORS = ['#e0e0e0', '#ff0000'];
-  const baseValue = 100 - value;
+  const valuePercentage = value * 100;
+  const baseValue = 100 - valuePercentage;
 
   const data = [
     { name: 'Group A', value: baseValue },
-    { name: 'Group B', value: value }
+    { name: 'Group B', value: valuePercentage }
   ];
 
   return (
     <div className={'PieChart'} style={{ width: '100%', height: '100%' }}>
       <div className={'PieChart-text'}>
-        <span>{`${value}%`}</span>
+        <span>{`${valuePercentage}%`}</span>
         <span>de votre objectif</span>
       </div>
 
@@ -58,4 +59,4 @@ function ScoreShart({ value }) {
   );
 }
 
-export default ScoreShart;
+export default ScoreGraph;

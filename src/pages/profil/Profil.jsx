@@ -5,7 +5,7 @@ import chicken from '../../assets/FoodGraphIcons/chicken.svg';
 import apple from '../../assets/FoodGraphIcons/apple.svg';
 import burger from '../../assets/FoodGraphIcons/burger.svg';
 import { FoodGraph } from './FoodGraph/FoodGraph';
-import ScoreShart from './ScoreGraph/ScoreShart';
+import ScoreGraph from './ScoreGraph/ScoreGraph';
 import RadarGraph from './RadarGraph/RadarGraph';
 import BarGraph from './BarGraph/BarGraph';
 import CurveGraph from './CurveGraph/CurveGraph';
@@ -88,7 +88,7 @@ const Profil = () => {
         </div>
 
         <div className={'div5'}>
-          <ScoreShart value={50} />
+          <ScoreGraph value={data.data.todayScore} />
         </div>
       </div>
     </div>

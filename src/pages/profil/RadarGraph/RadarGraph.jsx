@@ -3,17 +3,11 @@ import './RadarGraph.css';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 /**
- * Component that build the user's Board performance (radar)
- * @param { number } idUrl.id
- * @return { RadarGraph }
- */
-
-/**
  * Component  builds the user's Board performance (radar)
  *
  * @param id number as id from current user
  *
- * @return CurveGraph
+ * @return RadarGraph
  * @author Alexis.N
  * @version 1.0
  */
@@ -38,7 +32,6 @@ function RadarGraph({ id }) {
     return;
   }
 
-  // Sartox : for (const [i, value] of data.entries()
   const indexToName = () => {
     for (let x = 0; x < data.data.data.length; x++) {
       data.data.data[x].kind = data.data.kind[x + 1];
@@ -46,9 +39,25 @@ function RadarGraph({ id }) {
   };
   indexToName();
 
+  let leTest = [];
+  const sortTabler = () => {
+    return (leTest = [...data.data.data].reverse());
+  };
+  sortTabler();
+
+  const tranlasteTabler = (data) => {
+    const categories = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
+    data.map((elt, index) => {
+      elt.kind = categories[index];
+    });
+    return data;
+  };
+
+  const newTranlateData = tranlasteTabler(sortTabler());
+
   return (
     <ResponsiveContainer className={'RadarGraph'} width="100%" height="100%">
-      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data.data.data}>
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={newTranlateData}>
         {/*radialLines introuvable sur la doc de recharts*/}
         <PolarGrid radialLines={false} />
         <PolarAngleAxis className={'RadarGraph'} dataKey="kind" />

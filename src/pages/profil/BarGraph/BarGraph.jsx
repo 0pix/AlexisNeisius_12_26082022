@@ -68,10 +68,23 @@ function BarGraph({ id }) {
           <Legend content={<CustomizedLegendBar />} />
           <CartesianGrid className={'CartesianGrid'} opacity={0.3} strokeDasharray="3 3" />
           <XAxis dataKey="day" tickLine={false} />
-          <YAxis orientation={'right'} axisLine={false} tickLine={false} />
+          <YAxis yAxisId={0} orientation={'right'} axisLine={false} tickLine={false} />
+          <YAxis yAxisId={1} hide={true} orientation={'right'} axisLine={false} tickLine={false} />
           <Tooltip className={Tooltip} content={<CustomTooltipBar />} />
-          <Bar dataKey="kilogram" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#282D30" />
-          <Bar dataKey="calories" radius={[10, 10, 0, 0]} maxBarSize={8} fill="#E60000" />
+          <Bar
+            yAxisId={0}
+            dataKey="kilogram"
+            radius={[10, 10, 0, 0]}
+            maxBarSize={8}
+            fill="#282D30"
+          />
+          <Bar
+            yAxisId={1}
+            dataKey="calories"
+            radius={[10, 10, 0, 0]}
+            maxBarSize={8}
+            fill="#E60000"
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>
