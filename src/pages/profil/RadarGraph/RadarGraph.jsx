@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import './RadarGraph.css';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
@@ -32,32 +31,17 @@ function RadarGraph({ id }) {
     return;
   }
 
-  const indexToName = () => {
-    for (let x = 0; x < data.data.data.length; x++) {
-      data.data.data[x].kind = data.data.kind[x + 1];
+  const categories = ['Cardio', 'Energie', 'Endurance', 'Force', 'Vitesse', 'Intensité'];
+  const refactoData = () => {
+    for (let x = 0; x < data.data.length; x++) {
+      data.data[x].kind = categories[x];
     }
   };
-  indexToName();
-
-  let leTest = [];
-  const sortTabler = () => {
-    return (leTest = [...data.data.data].reverse());
-  };
-  sortTabler();
-
-  const tranlasteTabler = (data) => {
-    const categories = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio'];
-    data.map((elt, index) => {
-      elt.kind = categories[index];
-    });
-    return data;
-  };
-
-  const newTranlateData = tranlasteTabler(sortTabler());
+  refactoData();
 
   return (
     <ResponsiveContainer className={'RadarGraph'} width="100%" height="100%">
-      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={newTranlateData}>
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data.data.reverse()}>
         {/*radialLines introuvable sur la doc de recharts*/}
         <PolarGrid radialLines={false} />
         <PolarAngleAxis className={'RadarGraph'} dataKey="kind" />

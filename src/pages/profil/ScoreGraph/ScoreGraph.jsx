@@ -3,15 +3,9 @@ import './ScoreGraph.css';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 /**
- * Component that build the user's Board score of objectif
- * @param { number } 50
- * @return { ScoreGraph }
- */
-
-/**
  * Component  builds the user's Board objectif
  *
- * @param value number as value as the percentage of the objectif
+ * @param value decimal number as value of the percentage objectif (dataUser)
  *
  * @return ScoreGraph
  * @author Alexis.N
@@ -19,6 +13,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
  */
 
 function ScoreGraph({ value }) {
+  // console.log(value);
   const COLORS = ['#e0e0e0', '#ff0000'];
   const valuePercentage = value * 100;
   const baseValue = 100 - valuePercentage;

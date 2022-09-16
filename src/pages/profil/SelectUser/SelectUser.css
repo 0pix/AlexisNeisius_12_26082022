@@ -1,0 +1,37 @@
+.SelectUser {
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SelectUser nav {
+  border-radius: 15px;
+  background-color: #ececec;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.SelectUser h2 {
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #808080;
+}
+
+.SelectUser li {
+  margin: 10px 0;
+}
+
+.SelectUser a {
+  font-size: 1.5em;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.SelectUser a:hover {
+  color: var(--secondary-color);
+}

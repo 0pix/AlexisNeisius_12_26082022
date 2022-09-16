@@ -7,32 +7,17 @@ import { CustomTooltip } from './CustomTooltip';
 /**
  * Component  builds the user's Board average-sessions (the curve)
  *
- * @param id number as id from current user
+ * @param data data from the user profil (averageSessions)
  *
  * @return CurveGraph
  * @author Alexis.N
  * @version 1.0
  */
 
-function CurveGraph({ id }) {
-  const [data, setData] = useState([]);
+function CurveGraph({ data }) {
   const [coordinate, setCoordinate] = useState(0);
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}/average-sessions`)
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        // console.log(data);
-        setData(data);
-      })
-      .catch(function (err) {
-        console.log(err, 'error');
-      });
-  }, [id, setData]);
-
-  if (data.data === undefined || data.data === null) {
+  if (data === undefined || data === null) {
     return;
   }
 
@@ -43,7 +28,7 @@ function CurveGraph({ id }) {
       return elt;
     });
   };
-  dayToIndex(data.data.sessions);
+  dayToIndex(data.sessions);
 
   return (
     <div className={'CurveGraph'} style={{ width: '100%', height: '100%' }}>
@@ -55,7 +40,7 @@ function CurveGraph({ id }) {
           width={500}
           height={300}
           margin={{ top: 80, right: 5, bottom: 5, left: 5 }}
-          data={data.data.sessions}>
+          data={data.sessions}>
           {/** gradient for the svg curve */}
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">

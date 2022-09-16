@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import fire from '../../assets/FoodGraphIcons/fire.svg';
 import chicken from '../../assets/FoodGraphIcons/chicken.svg';
@@ -10,28 +9,20 @@ import RadarGraph from './RadarGraph/RadarGraph';
 import BarGraph from './BarGraph/BarGraph';
 import CurveGraph from './CurveGraph/CurveGraph';
 import './Profil.css';
+import { useFetch } from '../../hooks/useFetch';
+import { SelectUser } from './SelectUser/SelectUser';
 
 const Profil = () => {
-  const [data, setData] = useState([]);
   const idUrl = useParams();
+  const { data: dataUser } = useFetch(`http://localhost:3000/user/${idUrl.id}/`); //data user (id, keyData, todayScore, userInfos)
+  const { data: dataActivity } = useFetch(`http://localhost:3000/user/${idUrl.id}/activity`); //BarGraph
+  const { data: dataPerformance } = useFetch(`http://localhost:3000/user/${idUrl.id}/performance`); //RadarGraph
+  const { data: dataAverageSessions } = useFetch(
+    `http://localhost:3000/user/${idUrl.id}/average-sessions`
+  ); //CurveGraph
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/user/${idUrl.id}/`)
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        // console.log(data);
-
-        setData(data);
-      })
-      .catch(function (err) {
-        console.log(err, ' error');
-      });
-  }, [idUrl.id, setData]);
-
-  if (data.data === undefined || data.data === null) {
-    return;
+  if (dataUser === undefined || dataUser === null) {
+    return <SelectUser />;
   }
 
   return (
@@ -46,7 +37,7 @@ const Profil = () => {
 
       <div className={'Home-content'}>
         <div className={'div1'}>
-          <BarGraph id={idUrl.id} />
+          <BarGraph data={dataActivity} />
         </div>
 
         <div className={'div2'}>
@@ -80,7 +71,7 @@ const Profil = () => {
         </div>
 
         <div className={'div3'}>
-          <CurveGraph id={idUrl.id} />
+          <CurveGraph data={dataAverageSessions} />
         </div>
 
         <div className={'div4'}>

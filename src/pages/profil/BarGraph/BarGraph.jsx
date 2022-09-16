@@ -14,12 +14,6 @@ import { CustomTooltipBar } from './CustomTooltipBar';
 import { CustomizedLegendBar } from './CustomizedLegendBar';
 
 /**
- * Component build the user's Board activites
- // * @param { number } idUrl.id
- // * @return { BarGraph }
- */
-
-/**
  * Component which builds the user's Board score of the activity
  *
  * @param id number as id from current user
@@ -29,24 +23,8 @@ import { CustomizedLegendBar } from './CustomizedLegendBar';
  * @version 1.0
  */
 
-function BarGraph({ id }) {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}/activity`)
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        // console.log(data);
-        setData(data);
-      })
-      .catch(function (err) {
-        console.log(err, 'error');
-      });
-  }, [id, setData]);
-
-  if (data.data === undefined || data.data === null) {
+function BarGraph({ data }) {
+  if (data === undefined || data === null) {
     return;
   }
 

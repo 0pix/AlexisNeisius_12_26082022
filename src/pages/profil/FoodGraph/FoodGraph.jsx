@@ -4,7 +4,7 @@ import './FoodGraph.css';
 /**
  * Component which build the user's Board score of stat food
  *
- * @param data number of the statistics
+ * @param data data from the user profil (dataAverageSessions)
  * @param img svg about statistics
  * @param bgColor color for the icon
  * @param category string to know what extension return
