@@ -1,7 +1,15 @@
 .CustomTooltipBar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   color: white;
   outline: none;
   background-color: #ff0101;
+  padding: 10px 5px;
+}
+
+.CustomTooltipBar p {
+  margin: 5px 0;
 }
 
 .CustomTooltipBar:active {

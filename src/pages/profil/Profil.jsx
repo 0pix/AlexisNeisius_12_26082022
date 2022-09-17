@@ -30,7 +30,7 @@ const Profil = () => {
       <div className={'Home-header'}>
         <h1>
           Bonjour
-          <span className={'Home-firstName'}>{' ' + data.data.userInfos.firstName}</span>
+          <span className={'Home-firstName'}>{' ' + dataUser.userInfos.firstName}</span>
         </h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
@@ -42,28 +42,28 @@ const Profil = () => {
 
         <div className={'div2'}>
           <FoodGraph
-            data={data.data.keyData.calorieCount}
+            data={dataUser.keyData.calorieCount}
             img={fire}
             category={'Calories'}
             bgColor={'rgba(255,0,0,0.09)'}
           />
 
           <FoodGraph
-            data={data.data.keyData.proteinCount}
+            data={dataUser.keyData.proteinCount}
             img={chicken}
             category={'Proteines'}
             bgColor={'rgba(73,183,253,0.09)'}
           />
 
           <FoodGraph
-            data={data.data.keyData.carbohydrateCount}
+            data={dataUser.keyData.carbohydrateCount}
             img={apple}
             category={'Glucides'}
             bgColor={'rgba(255,209,0,0.15)'}
           />
 
           <FoodGraph
-            data={data.data.keyData.lipidCount}
+            data={dataUser.keyData.lipidCount}
             img={burger}
             category={'Lipides'}
             bgColor={'rgba(253,81,129,0.15)'}
@@ -75,11 +75,11 @@ const Profil = () => {
         </div>
 
         <div className={'div4'}>
-          <RadarGraph id={idUrl.id} />
+          <RadarGraph data={dataPerformance} />
         </div>
 
         <div className={'div5'}>
-          <ScoreGraph value={data.data.todayScore} />
+          <ScoreGraph value={dataUser.todayScore || dataUser.score} />
         </div>
       </div>
     </div>

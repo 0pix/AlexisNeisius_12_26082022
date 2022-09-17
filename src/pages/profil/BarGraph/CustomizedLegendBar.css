@@ -1,21 +1,29 @@
-.legend {
-  position: absolute;
-  bottom: 285px;
-  right: 20px;
+.Legend {
+  width: 100%;
   display: flex;
   font-weight: 500;
   color: #000000;
-  /*background-color: chartreuse;*/
+  /*background-color: #943ade;*/
+  align-items: start;
+  justify-content: space-between;
+  height: 60px;
+  margin-bottom: 10px;
 }
 
-.legend__item {
+.Legend__item {
   display: flex;
   align-items: center;
   margin-right: 1rem;
   font-size: 0.8em;
 }
 
-.legend__circle {
+.Legend h2 {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: black;
+}
+
+.Legend__circle {
   background: red;
   height: 8px;
   width: 8px;
@@ -23,6 +31,22 @@
   margin: 0 10px;
 }
 
-.legend__circle--black {
+.Legend__circle--black {
   background: black;
+}
+
+.Legend-items {
+  padding-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Legend-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  /*background-color: chartreuse;*/
 }

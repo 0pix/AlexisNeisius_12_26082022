@@ -28,7 +28,7 @@
 
 .SelectUser a {
   font-size: 1.5em;
-  color: var(--main-color);
+  color: #575757;
   cursor: pointer;
 }
 

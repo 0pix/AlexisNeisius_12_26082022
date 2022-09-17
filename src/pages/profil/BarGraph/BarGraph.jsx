@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   BarChart,
   Bar,
@@ -16,7 +16,7 @@ import { CustomizedLegendBar } from './CustomizedLegendBar';
 /**
  * Component which builds the user's Board score of the activity
  *
- * @param id number as id from current user
+ * @param data data from the user profil (dataActivity)
  *
  * @return BarGraph
  * @author Alexis.N
@@ -34,16 +34,13 @@ function BarGraph({ data }) {
       return elt;
     });
   };
-  dayToIndex(data.data.sessions);
+  dayToIndex(data.sessions);
 
   return (
     <div className={'BarGraph'}>
-      <div className={'BarGraph-legend'}>
-        <h2>Activité quotidienne</h2>
-      </div>
-      <ResponsiveContainer height={250} className={'BarGraph-container'}>
-        <BarChart data={data.data.sessions}>
-          <Legend content={<CustomizedLegendBar />} />
+      <ResponsiveContainer>
+        <BarChart data={data.sessions}>
+          <Legend verticalAlign={'top'} content={<CustomizedLegendBar />} />
           <CartesianGrid className={'CartesianGrid'} opacity={0.3} strokeDasharray="3 3" />
           <XAxis dataKey="day" tickLine={false} />
           <YAxis yAxisId={0} orientation={'right'} axisLine={false} tickLine={false} />

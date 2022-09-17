@@ -4,30 +4,15 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 /**
  * Component  builds the user's Board performance (radar)
  *
- * @param id number as id from current user
+ * @param data from the user profil (dataPerformance)
  *
  * @return RadarGraph
  * @author Alexis.N
  * @version 1.0
  */
 
-function RadarGraph({ id }) {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}/performance`)
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        // console.log(data);
-        setData(data);
-      })
-      .catch(function (err) {
-        console.log(err, ' error');
-      });
-  }, [id, setData]);
-
-  if (data.data === undefined || data.data === null) {
+function RadarGraph({ data }) {
+  if (data === undefined || data === null) {
     return;
   }
 
