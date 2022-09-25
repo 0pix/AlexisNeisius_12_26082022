@@ -5,7 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const location = useLocation().pathname;
-  console.log(location);
   return (
     <header className="Header">
       <img src={logo} width={'140px'} alt={'logo'} />

@@ -4,7 +4,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 /**
  * Component  builds the user's Board performance (radar)
  *
- * @param data from the user profil (dataPerformance)
+ * @param data object, with data from the user profil (dataPerformance)
  *
  * @return RadarGraph
  * @author Alexis.N

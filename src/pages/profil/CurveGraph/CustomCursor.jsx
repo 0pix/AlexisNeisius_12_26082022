@@ -4,7 +4,7 @@ import React from 'react';
 /**
  * Component builds the custom cursor of the user's Board average-sessions (the curve)
  *
- * @param coordinate is an object with the position of the tooltip
+ * @param coordinate object, with the position of the tooltip
  *
  * @return CustomTooltipCursor
  * @author Alexis.N

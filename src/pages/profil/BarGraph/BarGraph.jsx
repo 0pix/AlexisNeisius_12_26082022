@@ -16,7 +16,7 @@ import { CustomizedLegendBar } from './CustomizedLegendBar';
 /**
  * Component which builds the user's Board score of the activity
  *
- * @param data data from the user profil (dataActivity)
+ * @param data object, with data from the user profil (dataActivity)
  *
  * @return BarGraph
  * @author Alexis.N
@@ -27,6 +27,7 @@ function BarGraph({ data }) {
   if (data === undefined || data === null) {
     return;
   }
+  console.log(data);
 
   const dayToIndex = (tabler) => {
     tabler.map((elt, index) => {

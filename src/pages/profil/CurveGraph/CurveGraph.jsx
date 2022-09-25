@@ -7,7 +7,7 @@ import { CustomTooltip } from './CustomTooltip';
 /**
  * Component  builds the user's Board average-sessions (the curve)
  *
- * @param data data from the user profil (averageSessions)
+ * @param data object, with data from the user profil (averageSessions)
  *
  * @return CurveGraph
  * @author Alexis.N

@@ -5,7 +5,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 /**
  * Component  builds the user's Board objectif
  *
- * @param value decimal number as value of the percentage objectif (dataUser)
+ * @param value  number, as value of the percentage objectif (dataUser)
  *
  * @return ScoreGraph
  * @author Alexis.N

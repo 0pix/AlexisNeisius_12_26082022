@@ -20,9 +20,6 @@ export const useFetch = (url, mock, dataMock, id) => {
   const mockBoolean = mock;
 
   const fetchData = () => {
-    console.log(id.id);
-    console.log(dataMock[0]);
-
     if (mockBoolean === false) {
       fetch(url)
         .then(function (res) {
