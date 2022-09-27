@@ -1,8 +1,7 @@
 .FoodGraph {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 40px;
+  width: 70%;
 }
 
 .FoodGraph-img {

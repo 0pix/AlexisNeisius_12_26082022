@@ -27,7 +27,6 @@ function BarGraph({ data }) {
   if (data === undefined || data === null) {
     return;
   }
-  console.log(data);
 
   const dayToIndex = (tabler) => {
     tabler.map((elt, index) => {
